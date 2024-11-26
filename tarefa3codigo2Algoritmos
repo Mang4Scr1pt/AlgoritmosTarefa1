@@ -1,37 +1,37 @@
-#include <stdio.h>
-
-float mediaTurma(int n_alunos) {
-    if (n_alunos == 0) return 0;
-    float total = 0;
-    for (int i = 0; i < n_alunos; i++) {
-        float nota;
-        printf("Digite a nota do aluno %d: ", i + 1);
-        scanf("%f", &nota);
-        total += nota;
-    }
-    return total / n_alunos;
+#include <stdio.h> // Biblioteca para funções de entrada e saída
+#include <string.h> // Biblioteca para manipulação de strings
+#include <locale.h> // Biblioteca para configurar a localização
+// Definição de uma estrutura chamada Carro
+typedef struct {
+char modelo[50]; // String para armazenar o modelo do carro
+int ano; // Inteiro para o ano do carro
+double preco; // Double para o preço do carro
+} Carro;
+// Função para modificar o preço do carro
+void modificarPreco(Carro *c, double novoPreco) {
+c->preco = novoPreco; // Modifica o preço do carro apontado por c
 }
-
-float mediaEscola(int n_turmas) {
-    float total_media = 0;
-    for (int i = 0; i < n_turmas; i++) {
-        int n_alunos;
-        printf("Digite o número de alunos da turma %d: ", i + 1);
-        scanf("%d", &n_alunos);
-        float media = mediaTurma(n_alunos);
-        printf("A média da turma %d é: %.2f\n", i + 1, media);
-        total_media += media;
-    }
-    return total_media / n_turmas;
+// Função para imprimir as informações do carro
+void imprimirCarro(Carro *c) {
+printf("Modelo: %s\n", c->modelo); // Imprime o modelo
+printf("Ano: %d\n", c->ano); // Imprime o ano
+printf("Preço: R$ %.2f\n", c->preco); // Imprime o preço com duas casas decimais
 }
-
+// Função principal
 int main() {
-    int n_turmas;
-    printf("Digite o número de turmas: ");
-    scanf("%d", &n_turmas);
-    float media_geral = mediaEscola(n_turmas);
-    printf("A média geral da escola é: %.2f\n", media_geral);
-    return 0;
+setlocale(LC_ALL, "portuguese"); // Configura a localização para português
+Carro carro1; // Declara uma variável carro1 do tipo Carro
+// Define os valores iniciais de carro1
+strcpy(carro1.modelo, "Xyz"); // Copia "Xyz" para o campo modelo de carro1
+carro1.ano = 2020; // Define o ano de carro1 como 2020
+carro1.preco = 90000.00; // Define o preço inicial de carro1 como 90000.00
+// Exibe os dados do carro antes da modificação
+printf("Dados antes da modificação:\n");
+imprimirCarro(&carro1); // Passa o endereço de carro1 para imprimir os dados
+// Modifica o preço de carro1
+modificarPreco(&carro1, 115000.00); // Atualiza o preço de carro1 para 115000.00
+// Exibe os dados do carro após a modificação
+printf("\nDados após a modificação do preço:\n");
+imprimirCarro(&carro1); // Imprime os dados novamente com o novo preço
+return 0; // Retorna 0 indicando que o programa terminou com sucesso
 }
-
-
