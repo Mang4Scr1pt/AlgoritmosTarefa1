@@ -1,0 +1,15 @@
+//Henrique Mangueira
+#include <stdio.h>
+
+float calcularMedia(int num1, int num2, int num3) {
+return (num1 + num2 + num3) / 3.0;
+}
+
+int main() {
+int n1, n2, n3;
+printf("Digite três números inteiros: ");
+scanf ("%d %d %d", &n1, &n2, &n3);
+
+printf ("Média: %.2f\n", calcularMedia(n1, n2, n3));
+return 0;
+}
