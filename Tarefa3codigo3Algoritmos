@@ -1,25 +1,34 @@
-#include <stdio.h>
+#include <stdio.h>  // Biblioteca para funções de entrada e saída
 
-int fibonacci(int n) {
-    if (n <= 0) return 0;
-    else if (n == 1) return 1;
-    else {
-        int a = 0, b = 1, temp;
-        for (int i = 2; i <= n; i++) {
-            temp = b;
-            b = a + b;
-            a = temp;
-        }
-        return b;
-    }
-}
+// Declaração da função calcularResultado
+int calcularResultado(int v[], int n);
 
 int main() {
-    int n;
-    printf("Digite o termo da série de Fibonacci que deseja calcular: ");
-    scanf("%d", &n);
-    int resultado = fibonacci(n);
-    printf("O %d-ésimo termo da série de Fibonacci é: %d\n", n, resultado);
-    return 0;
+	int vetor[5], i, resultado;   // Declara um array de inteiros vetor[5], um índice i e um inteiro resultado
+
+	// Loop para preencher o array vetor com valores
+	for (i = 0; i < 5; i++) {
+    	vetor[i] = i * 2;   // Atribui a cada posição do vetor o valor do índice multiplicado por 2
+	}
+
+	// Chama a função calcularResultado passando o vetor e o tamanho 5
+	resultado = calcularResultado(vetor, 5);
+
+	// Imprime o resultado da soma dos elementos do vetor
+	printf("O resultado é: %d\n", resultado);
+
+	return 0;   // Retorna 0 indicando que o programa terminou com sucesso
 }
+
+// Função que calcula a soma dos elementos de um array
+int calcularResultado(int v[], int n) {
+	int i, soma = 0;   // Declara um índice i e inicializa soma com 0
+
+	// Loop para somar todos os elementos do array
+	for (i = 0; i < n; i++) {
+    	soma += v[i];   // Soma o elemento v[i] ao acumulador soma
+	}
+	return soma;   // Retorna o valor total da soma
+}
+
 
