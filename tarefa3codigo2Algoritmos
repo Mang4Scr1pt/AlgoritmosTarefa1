@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+float mediaTurma(int n_alunos) {
+    if (n_alunos == 0) return 0;
+    float total = 0;
+    for (int i = 0; i < n_alunos; i++) {
+        float nota;
+        printf("Digite a nota do aluno %d: ", i + 1);
+        scanf("%f", &nota);
+        total += nota;
+    }
+    return total / n_alunos;
+}
+
+float mediaEscola(int n_turmas) {
+    float total_media = 0;
+    for (int i = 0; i < n_turmas; i++) {
+        int n_alunos;
+        printf("Digite o número de alunos da turma %d: ", i + 1);
+        scanf("%d", &n_alunos);
+        float media = mediaTurma(n_alunos);
+        printf("A média da turma %d é: %.2f\n", i + 1, media);
+        total_media += media;
+    }
+    return total_media / n_turmas;
+}
+
+int main() {
+    int n_turmas;
+    printf("Digite o número de turmas: ");
+    scanf("%d", &n_turmas);
+    float media_geral = mediaEscola(n_turmas);
+    printf("A média geral da escola é: %.2f\n", media_geral);
+    return 0;
+}
+
+
