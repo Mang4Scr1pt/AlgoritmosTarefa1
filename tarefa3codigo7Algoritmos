@@ -1,0 +1,28 @@
+//Henrique Mangueira
+#include <stdio.h>
+
+void encontrarMaior (int vetor [], int tamanho, int *maior, int *posicao) {
+*maior = vetor [0];
+*posicao = 0;
+for (int i = 1; i < tamanho; i++) {
+if (vetor[i] > *maior) {
+*maior = vetor [i];
+*posicao = i;
+}
+}
+}
+
+int main() {
+int tamanho = 5; 
+int vetor [tamanho];
+int maior, posicao;
+
+printf("Digite %d valores:\n", tamanho);
+for (int i = 0; i < tamanho; i++) {
+scanf ("%d", &vetor [1]);
+}
+
+encontrarMaior (vetor, tamanho, &maior, &posicao);
+printf("Maior valor: %d na posição %d\n", maior, posicao);
+return 0;
+}
