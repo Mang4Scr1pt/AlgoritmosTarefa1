@@ -1,0 +1,20 @@
+// Henrique Mangueira
+
+#include <stdio.h>
+
+void exibirImpares(int numero) {
+for (int 1 = 1; 1 <= numero; i++) {
+if (i % 2 != 0 && i % 7 != 0) {
+printf("d ", i);
+}
+	}
+}
+
+int main() {
+int num;
+printf("Digite um número: ");
+scanf ("%d", &num);
+
+exibir Impares (num);
+return 0;
+}
