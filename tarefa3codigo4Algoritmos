@@ -1,22 +1,22 @@
+//Henrique Mangueira
 #include <stdio.h>
 
-
-int somatorio(int n) {
-    int soma = 0;
-    for (int i = 1; i <= n; i++) {
-        soma += 5 * i * i * i + i * i + 2 * i + 8;
-    }
-    return soma;
+float calcularMedia(float nota1, float nota2, float nota3, float nota4) {
+return (nota1 + nota2 + nota3 + nota4) / 4;
 }
 
 int main() {
-    int n;
-    
-    printf("Digite o valor de n: ");
-    scanf("%d", &n);
-    
-    int resultado = somatorio(n);
-    printf("O resultado do somatório é: %d\n", resultado);
-    
-    return 0;
+float n1, n2, n3, n4, media;
+printf("Digite as quatro notas do aluno: ");
+scanf("%f %f %f %f", &n1, &n2, &n3, &n4);
+
+media = calcularMedia(n1, n2, n3, n4);
+printf( "Média: %.2f\n", media);
+if (media >= 7) {
+printf ("Aprovado\n");
+} else {
+printf ("Reprovado\n");
 }
+return 0;
+}
+
