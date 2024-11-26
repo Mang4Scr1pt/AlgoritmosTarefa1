@@ -1,0 +1,25 @@
+// Nome do Aluno
+#include <stdio.h>
+
+void multiplicarValores(int vetor [], int tamanho, int *resultado) {
+*resultado = 1;
+for (int i = 0; i < tamanho; i++) {
+*resultado *= vetor [i];
+}
+}
+
+int main() {
+int tamanho = 5;
+int vetor [tamanho];
+int resultado;
+
+printf("Digite %d valores: \n", tamanho);
+for (int i = 0; i < tamanho; i++) {
+scanf ("%d", &vetor [i]);
+}
+
+multiplicarValores (vetor, tamanho, &resultado);
+printf ("Resultado da multiplicação: %d\n", resultado);
+return 0;
+}
+
