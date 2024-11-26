@@ -1,0 +1,49 @@
+#include <stdio.h>
+
+typedef struct {
+	double peso;
+	int idade;
+	double altura;
+} pessoa;
+
+void imprimePessoa(pessoa p) {
+	printf("Peso: %.1lf. Idade: %d. Altura: %.2lf.\n", p.peso, p.idade, p.altura);
+}
+
+// Função para permitir que o usuário insira os dados de uma pessoa.
+void preencherPessoa(pessoa *p) {
+	printf("Digite o peso: ");
+	scanf("%lf", &p->peso);
+	printf("Digite a idade: ");
+	scanf("%d", &p->idade);
+	printf("Digite a altura: ");
+	scanf("%lf", &p->altura);
+}
+
+int main() {
+	pessoa pessoas[5], p1;
+
+		printf("Inserindo dados para pessoas[0]:\n");
+	preencherPessoa(&pessoas[0]);
+
+	
+	p1 = pessoas[0];
+
+		if (p1.idade > 20)
+    	p1.idade++;
+
+		pessoas[1] = pessoas[0];
+
+	// Preenchendo os dados para as outras posições do vetor 'pessoas'.
+	for (int i = 2; i < 5; i++) {
+    	printf("Inserindo dados para pessoas[%d]:\n", i);
+    	preencherPessoa(&pessoas[i]);
+	}
+
+		imprimePessoa(p1);
+	for (int i = 0; i < 5; i++) {
+    	imprimePessoa(pessoas[i]);
+	}
+
+	return 0;
+}
