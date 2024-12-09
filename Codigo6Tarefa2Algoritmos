@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int maior(int a, int b);
+
+int main() {
+    int num1, num2, resultado;
+
+    printf("Digite o primeiro número inteiro: ");
+    scanf("%d", &num1);
+    printf("Digite o segundo número inteiro: ");
+    scanf("%d", &num2);
+
+    resultado = maior(num1, num2);
+
+    printf("O maior número entre %d e %d é: %d\n", num1, num2, resultado);
+
+    return 0;
+}
+
+//UTILIZEI AUXÍLIO E IA PARA EXECUTAR ESSE EXERCÍCIO
